@@ -59,13 +59,18 @@ namespace QuantLib {
 
         return ecd <= ref;
     }
-
+   
+   
     void CashFlow::accept(AcyclicVisitor& v) {
         Visitor<CashFlow>* v1 = dynamic_cast<Visitor<CashFlow>*>(&v);
         if (v1 != 0)
             v1->visit(*this);
         else
             Event::accept(v);
+    }
+ 
+    void test(){
+     std::cout<<" Le fameux Bonjour "<<std::endl;
     }
 
 }
